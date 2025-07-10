@@ -16,18 +16,16 @@ public class Bonfire : MonoBehaviour
         }
 
     }
-
     void OnTriggerStay(Collider other)
     {
-
         if (other.GetComponent<Temperature>() != null)
         {
-            Temperature temperature = other.GetComponent<Temperature>();
-
-            if (temperature.temperatureCurrent < temperature.temperatureNormal)
-            { 
-                temperature.temperatureCurrent += heatPower * Time.deltaTime;
-            }
+                Temperature temperature = other.GetComponent<Temperature>();
+    
+                if (temperature.temperatureCurrent < temperature.temperatureNormal)
+                { 
+                    temperature.temperatureCurrent += heatPower * Time.deltaTime;
+                }
         }
 
     }
